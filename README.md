@@ -35,22 +35,14 @@ Engage in parkour challenges that involve:
 
 ### Scenes
 The game comprises three main scenes:
-- **Highscore:** View the top player scores.
+- **Home:** Welcome screen where the game can be started or the highscore can be seen.
 - **Menu:** Navigate through the game options.
+- **Highscore:** View the top player scores.
 - **Game:** The heart of the game where you control your animal character.
   - **Overlay:** Throuout the game the time and points are visible
 
 ### Pausable Timer
 The game includes a timer that can be paused, allowing you to strategize and take a breather during challenging moments.
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
--
 
 ## Assets
 Please make sure to support these asset creators by downloading their assets if you intend to modify or expand upon the game.
