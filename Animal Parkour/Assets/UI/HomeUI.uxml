@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="Start Game" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-direction: column-reverse; justify-content: flex-end;" />
+    <ui:Button text="Highscore" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: lower-center; flex-direction: column-reverse; justify-content: flex-end;" />
+</ui:UXML>
