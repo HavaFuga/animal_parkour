@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private float _currentVelocity;
     private CharacterController _characterController;
     private float _playerVelocity;
-    private bool _isGrounded;
     private readonly float _gravityValue = -9.81f;
     private int _numberOfJumps;
 
@@ -29,9 +24,9 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
+        ApplyGravity();
         ApplyMovement(); 
         ApplyRotation();
-        ApplyGravity();
     }
 
     private void ApplyMovement()
@@ -41,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyRotation()
     {
+        if (_input.sqrMagnitude == 0) return;
+        
         float targetAngle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _currentVelocity, smoothTime);
         transform.rotation = Quaternion.Euler(new Vector3(0.0f, angle, 0.0f));
@@ -48,7 +45,8 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyGravity()
     {
-        if (_isGrounded && _playerVelocity < 0.0f)
+       
+        if (IsGrounded() && _playerVelocity < 0.0f)
         {
             _playerVelocity = -1.0f;
         }
@@ -56,7 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             _playerVelocity += _gravityValue * Time.deltaTime;
         }
-		      
+		
         _direction.y = _playerVelocity;
     }
 
@@ -72,7 +70,8 @@ public class PlayerController : MonoBehaviour
         if (!IsGrounded() && _numberOfJumps >= maxNumberOfJumps) return;
 		
         _numberOfJumps++;
-        _playerVelocity = jumpForce;    }
+        _playerVelocity = jumpForce;    
+    }
 
     private bool IsGrounded() => _characterController.isGrounded;
 }
