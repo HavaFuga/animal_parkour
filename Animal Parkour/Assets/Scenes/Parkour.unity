@@ -170,7 +170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180967275}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34523e21f6fc4d48a9f0600769de479, type: 3}
   m_Name: 
@@ -1150,8 +1150,6 @@ GameObject:
   - component: {fileID: 2023423538}
   - component: {fileID: 2023423537}
   - component: {fileID: 2023423536}
-  - component: {fileID: 2023423539}
-  - component: {fileID: 2023423540}
   - component: {fileID: 2023423541}
   m_Layer: 0
   m_Name: Main Camera
@@ -1234,52 +1232,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
---- !u!114 &2023423539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023423535}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fa74976ce53a974d9e10ee53d49bc44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2023423540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023423535}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2023423541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,8 +1244,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769203e7871fd69429637a9b7050c554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characters: []
-  _target: {fileID: 180967276}
+  _characters:
+  - {fileID: 1466344880}
+  - {fileID: 184965888}
+  - {fileID: 1520292526}
+  - {fileID: 199709097}
+  - {fileID: 1115435624}
+  - {fileID: 1773577041}
+  - {fileID: 2137377232}
+  - {fileID: 358322473}
   _offset: {x: 0, y: 3, z: -10}
   smoothTime: 0.7
 --- !u!1001 &2137377230

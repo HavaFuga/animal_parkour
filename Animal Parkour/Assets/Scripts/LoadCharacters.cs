@@ -1,15 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadCharacters : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _characterPrefabs;
+    [SerializeField] private GameObject[] _character;
     
 
     private void Start()
     {
-        _characterPrefabs[PersistentDataManager.SelectedCharacter].SetActive(true);
+        _character[PersistentDataManager.SelectedCharacter].SetActive(true);
     }
 }
