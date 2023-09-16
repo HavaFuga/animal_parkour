@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class LoadCharacters : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _character;
+    [SerializeField] private GameObject[] _characterPrefabs;
     
 
     private void Start()
     {
-        _character[PersistentDataManager.SelectedCharacter].SetActive(true);
+        int id = PersistentDataManager.SelectedCharacter;
+        GameObject prefab = _characterPrefabs[id];
+        prefab.SetActive(true);
     }
 }
