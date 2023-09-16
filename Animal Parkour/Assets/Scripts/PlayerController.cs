@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,33 +69,20 @@ public class PlayerController : MonoBehaviour
     {
         if (!context.started) return;
         if (!IsGrounded() && _numberOfJumps >= maxNumberOfJumps) return;
-		
+        if (_numberOfJumps == 0) StartCoroutine(WaitForLanding());
+
         _numberOfJumps++;
         _playerVelocity = jumpForce;    
     }
 
     private bool IsGrounded() => _characterController.isGrounded;
+
+    // wait for character to land and then set 
+    private IEnumerator WaitForLanding()
+    {
+        yield return new WaitUntil(() => !IsGrounded());
+        yield return new WaitUntil(IsGrounded);
+
+        _numberOfJumps = 0;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
