@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float _playerVelocity;
     private readonly float _gravityValue = -9.81f;
     private int _numberOfJumps;
+    private Animator _animator;
 
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
@@ -21,13 +23,34 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        _animator = GetComponentInParent<Animator>();
     }
     
     private void FixedUpdate()
     {
         ApplyGravity();
+        ApplyAnimation();
         ApplyMovement(); 
         ApplyRotation();
+    }
+
+    private void ApplyAnimation()
+    {
+        // animate jumping
+        if (_characterController.transform.position.y >= 0.5)
+        {
+            AnimationManager.ChangeAnimation(_animator, PersistentDataManager.PLAYER_JUMP);
+        }
+        // animate walking
+        if (_direction.x != 0 || _direction.z != 0)
+        {
+            AnimationManager.ChangeAnimation(_animator,PersistentDataManager.PLAYER_WALK);
+        }
+        // animate idle
+        if (_direction == Vector3.zero && _characterController.transform.position.y < 0.5)
+        {
+            AnimationManager.ChangeAnimation(_animator,PersistentDataManager.PLAYER_IDLE);
+        }
     }
 
     private void ApplyMovement()
@@ -67,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (!context.started) return;
+        if (!context.started || _characterController == null) return;
         if (!IsGrounded() && _numberOfJumps >= maxNumberOfJumps) return;
         if (_numberOfJumps == 0) StartCoroutine(WaitForLanding());
 

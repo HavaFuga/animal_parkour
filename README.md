@@ -44,6 +44,18 @@ The game comprises three main scenes:
 ### Pausable Timer
 The game includes a timer that can be paused, allowing you to strategize and take a breather during challenging moments.
 
+## My To-Do's
+- [x] Add character Movement/Jump
+- [x] Add Character Menu
+- [ ] Add changes to all characters
+- [ ] Animate basic movements to all characters
+- [ ] Create first Parkour 
+- [ ] 
+- [ ] Add Points System
+- [ ] Create Overlay during game
+- [ ] Add Trash (minus Points)
+- [ ] Add Enemies
+
 ## Assets
 Please make sure to support these asset creators by downloading their assets if you intend to modify or expand upon the game.
 ### [Quirky Series - FREE Animals Pack](https://assetstore.unity.com/packages/3d/characters/animals/quirky-series-free-animals-pack-178235)

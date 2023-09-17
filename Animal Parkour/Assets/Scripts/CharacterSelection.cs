@@ -19,8 +19,8 @@ public class CharacterSelection : MonoBehaviour
     {
         transform.Rotate (0f,0f,0f);
         _focusedCharacter = 0;
-        ActivateCharacter();
-    }
+        // ActivateCharacter();
+    }   
 
     private void Update()
     {

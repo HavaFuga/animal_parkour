@@ -7,6 +7,17 @@ public class PersistentDataManager : MonoBehaviour
     private const string SelectedCharacterKey = "SelectedCharacter";
     private const string SteeringKey = "Steering";
     
+    // Animation States
+    public const string PLAYER_IDLE = "Idle_A";
+    public const string PLAYER_WALK = "Walk";
+    public const string PLAYER_RUN = "Run";
+    public const string PLAYER_FLY = "Fly";
+    public const string PLAYER_SWIM = "Swim";
+    public const string PLAYER_DEATH = "Death";
+    public const string PLAYER_JUMP = "Jump";
+    public const string PLAYER_SPIN = "Spin";
+    public const string PLAYER_ROLL = "Roll";
+    
     // property in C# same as set get methods for a variable
     public static int SelectedCharacter
     {
