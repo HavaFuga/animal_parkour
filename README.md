@@ -47,8 +47,9 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 ## My To-Do's
 - [x] Add character Movement/Jump
 - [x] Add Character Menu
-- [ ] Add changes to all characters
-- [ ] Animate basic movements to all characters
+- [x] Add changes to all characters
+- [x] Animate basic movements to all characters
+- [ ] Add Scenes Manager
 - [ ] Create first Parkour 
 - [ ] 
 - [ ] Add Points System

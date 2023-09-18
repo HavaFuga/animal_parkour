@@ -37,17 +37,16 @@ public class PlayerController : MonoBehaviour
     private void ApplyAnimation()
     {
         // animate jumping
-        if (_characterController.transform.position.y >= 0.5)
+        if (_characterController.transform.position.y >= 0.5 && !IsGrounded())
         {
             AnimationManager.ChangeAnimation(_animator, PersistentDataManager.PLAYER_JUMP);
-        }
-        // animate walking
+        } else 
+            // animate walking
         if (_direction.x != 0 || _direction.z != 0)
         {
             AnimationManager.ChangeAnimation(_animator,PersistentDataManager.PLAYER_WALK);
-        }
-        // animate idle
-        if (_direction == Vector3.zero && _characterController.transform.position.y < 0.5)
+        } else
+            // animate idle
         {
             AnimationManager.ChangeAnimation(_animator,PersistentDataManager.PLAYER_IDLE);
         }
@@ -69,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyGravity()
     {
-       
         if (IsGrounded() && _playerVelocity < 0.0f)
         {
             _playerVelocity = -1.0f;
@@ -78,7 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             _playerVelocity += _gravityValue * Time.deltaTime;
         }
-		
+		      
         _direction.y = _playerVelocity;
     }
 
