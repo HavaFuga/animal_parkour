@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="S" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PauseMenu" style="width: 42px; align-items: flex-start; align-self: flex-start;" />
+</ui:UXML>
