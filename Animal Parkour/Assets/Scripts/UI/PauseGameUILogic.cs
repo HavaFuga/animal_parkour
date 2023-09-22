@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PauseGameUILogic : MonoBehaviour
 {
@@ -10,24 +13,47 @@ public class PauseGameUILogic : MonoBehaviour
     private const string MenuButtonName = "Menu";
     private const string QuitButtonName = "Quit";
 
-    public event EventHandler PauseMenuButtonPressed;
-
-    protected virtual void OnPauseMenuButtonPressed()
+    public event EventHandler ResumeButtonPressed;
+    public event EventHandler SettingsButtonPressed;
+    protected virtual void OnResumeButtonPressed()
     {
-        PauseMenuButtonPressed?.Invoke(this, EventArgs.Empty);
+        ResumeButtonPressed?.Invoke(this, EventArgs.Empty);
     }
-        
-    private UIDocument _overlayDocument;
+    
+    protected virtual void OnSettingsButtonPressed()
+    {
+        SettingsButtonPressed?.Invoke(this, EventArgs.Empty);
+    }
+    
+    private UIDocument _pauseMenuDocument;
 
     private void OnEnable()
     {
-        _overlayDocument = GetComponent<UIDocument>();
-
-        _overlayDocument.rootVisualElement.Q<Button>(PauseMenuButtonName).clicked += () =>
+        _pauseMenuDocument = GetComponent<UIDocument>();
+        
+        // Resume
+        _pauseMenuDocument.rootVisualElement.Q<Button>(ResumeButtonName).clicked += () =>
         {
-            Debug.Log("Pause Menu Button Pressed");
-            OnPauseMenuButtonPressed();
+            Debug.Log("Resume with game");
+            OnResumeButtonPressed();
+        };
+        
+        // Settings
+        _pauseMenuDocument.rootVisualElement.Q<Button>(SettingsButtonName).clicked += () =>
+        {
+            Debug.Log("Settings menu open");
+            OnSettingsButtonPressed();
+        };
+        
+        // Quit
+        _pauseMenuDocument.rootVisualElement.Q<Button>(QuitButtonName).clicked += () =>
+        {
+            Debug.Log("Quit Button Clicked");
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
         };
     }
-}
 }

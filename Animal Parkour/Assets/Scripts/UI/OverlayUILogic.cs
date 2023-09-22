@@ -6,7 +6,7 @@ namespace UI
 {
     public class OverlayUILogic : MonoBehaviour
     {
-        private const string PauseMenuButtonName = "PauseMenu";
+        private const string PauseMenuButtonName = "Pause";
 
         public event EventHandler PauseMenuButtonPressed;
 

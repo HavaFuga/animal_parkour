@@ -49,11 +49,11 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 - [x] Add Character Menu
 - [x] Add changes to all characters
 - [x] Animate basic movements to all characters
-- [ ] Add Scenes Manager
+- [x] Add Scenes Manager
 - [ ] Create first Parkour 
 - [ ] 
 - [ ] Add Points System
-- [ ] Create Overlay during game
+- [ ] Create Overlay during game with time and hearts
 - [ ] Add Trash (minus Points)
 - [ ] Add Enemies
 

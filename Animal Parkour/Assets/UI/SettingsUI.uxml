@@ -1,3 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Button text="P" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Pause" style="width: 42px; align-items: flex-start; align-self: flex-start;" />
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" name="Slider1" />
+    <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="42" high-value="100" />
 </ui:UXML>
