@@ -50,13 +50,14 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 - [x] Add changes to all characters
 - [x] Animate basic movements to all characters
 - [x] Add Scenes Manager
-- [ ] Create first Parkour 
-- [ ] Animate Parkour
-- [ ] Add Points System
-- [ ] Animate Points
-- [ ] Create Overlay during game with time and hearts
+- [x] Create first Parkour 
+- [x] Animate Parkour
+- [x] Add Points System
+- [x] Animate Points
+- [x] Create Overlay during game with time and hearts
 - [ ] Add Trash (minus Points)
 - [ ] Add Enemies
+- [ ] MAKE PRETTY CUS EW
 
 ## Assets
 Please make sure to support these asset creators by downloading their assets if you intend to modify or expand upon the game.
