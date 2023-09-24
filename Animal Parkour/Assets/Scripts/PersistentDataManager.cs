@@ -5,7 +5,8 @@ public class PersistentDataManager : MonoBehaviour
 {
     // string variables called keys
     private const string SelectedCharacterKey = "SelectedCharacter";
-    private const string SteeringKey = "Steering";
+    private const string EnergyKey = "Energy";
+    public static readonly string EnergyBarName = "Energy";
     
     // Animation States
     public const string PLAYER_IDLE = "Idle_A";
@@ -29,6 +30,20 @@ public class PersistentDataManager : MonoBehaviour
             OnDataChangeEvent();
         }
     }
+    
+    // property in C# same as set get methods for a variable
+    public static int Energy
+    {
+        // PlayerPrefs has float, int, string. other values should be created manual methods
+        get => PlayerPrefs.GetInt(EnergyKey, 0);
+        set
+        {
+            PlayerPrefs.SetInt(EnergyKey, value);
+            OnDataChangeEvent();
+        }
+    }
+    
+    
 
     public static event EventHandler DataChangeEvent;
     private static void OnDataChangeEvent()

@@ -23,6 +23,5 @@ public class PointRotation : MonoBehaviour
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
         transform.position = tempPos;
         transform.Rotate(rotation * Time.deltaTime);
-
     }
 }

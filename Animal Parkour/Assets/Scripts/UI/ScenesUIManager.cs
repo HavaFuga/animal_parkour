@@ -9,7 +9,7 @@ public class ScenesUIManager : MonoBehaviour
     [SerializeField] private OverlayUILogic overlayUILogicPrefab;
     [SerializeField] private PauseGameUILogic _pauseGameUILogicPrefab;
 
-    private OverlayUILogic _overlayPanel;
+    public OverlayUILogic _overlayPanel;
     private PauseGameUILogic _pauseMenuPanel;
     private float _timeScale;
 
@@ -41,4 +41,6 @@ public class ScenesUIManager : MonoBehaviour
         _pauseMenuPanel.gameObject.SetActive(false);
         _overlayPanel.gameObject.SetActive(true);
     }
+
+    
 }

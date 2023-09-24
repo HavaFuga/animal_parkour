@@ -14,15 +14,6 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-
-        
-        // if (Mouse.current.leftButton.wasPressedThisFrame)
-        // {
-        //     turn.x = Mouse.current.position.ReadValue().x;
-        //     turn.y = Mouse.current.position.ReadValue().y;
-        //
-        // }
-        //
         if (_characters.Length == 0) return;
         _target = _characters[PersistentDataManager.SelectedCharacter].transform;
         Vector3 targetPosition = _target.position + _offset;

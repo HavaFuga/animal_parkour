@@ -9,20 +9,14 @@ using UnityEngine.UIElements;
 public class PauseGameUILogic : MonoBehaviour
 {
     private const string ResumeButtonName = "Resume";
-    private const string SettingsButtonName = "Settings";
+    private const string ResetButtonName = "Reset";
     private const string MenuButtonName = "Menu";
     private const string QuitButtonName = "Quit";
 
     public event EventHandler ResumeButtonPressed;
-    public event EventHandler SettingsButtonPressed;
     protected virtual void OnResumeButtonPressed()
     {
         ResumeButtonPressed?.Invoke(this, EventArgs.Empty);
-    }
-    
-    protected virtual void OnSettingsButtonPressed()
-    {
-        SettingsButtonPressed?.Invoke(this, EventArgs.Empty);
     }
     
     private UIDocument _pauseMenuDocument;
@@ -38,11 +32,20 @@ public class PauseGameUILogic : MonoBehaviour
             OnResumeButtonPressed();
         };
         
-        // Settings
-        _pauseMenuDocument.rootVisualElement.Q<Button>(SettingsButtonName).clicked += () =>
+        // Menu
+        _pauseMenuDocument.rootVisualElement.Q<Button>(MenuButtonName).clicked += () =>
         {
-            Debug.Log("Settings menu open");
-            OnSettingsButtonPressed();
+            Debug.Log("Return to Menu");
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1f;
+        };
+        
+        // Settings
+        _pauseMenuDocument.rootVisualElement.Q<Button>(ResetButtonName).clicked += () =>
+        {
+            Debug.Log("Reset Game");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
         };
         
         // Quit
