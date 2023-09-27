@@ -16,7 +16,19 @@ public class CameraManager : MonoBehaviour
     {
         if (_characters.Length == 0) return;
         _target = _characters[PersistentDataManager.SelectedCharacter].transform;
-        Vector3 targetPosition = _target.position + _offset;
+
+        Vector3 swimmingAngle = Vector3.zero;
+        Vector3 swimmRotation = Vector3.zero;
+        
+        // is
+        if (_target.position.y < 2)
+        {
+            swimmingAngle.y = 6;
+            Debug.Log("is smaller than y < 2");
+            swimmRotation.x = 20;
+        }
+        Vector3 targetPosition = _target.position + _offset + swimmingAngle;
+        transform.Rotate(swimmRotation);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
     }   
 }
