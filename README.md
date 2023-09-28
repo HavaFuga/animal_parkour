@@ -55,7 +55,9 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 - [x] Add Points System
 - [x] Animate Points
 - [x] Create Overlay during game with time and hearts
-- [ ] Add Trash (minus Points)
+- [x] Add Trash (minus Points)
+- [x] Camera movement, when swimming
+- [ ] swimming animation
 - [ ] Add Enemies
 - [ ] MAKE PRETTY CUS EW
 

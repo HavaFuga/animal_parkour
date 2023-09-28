@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,15 +18,28 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float swimmjump;
     [SerializeField] private float smoothTime = 0.05f;
     [SerializeField] private int maxNumberOfJumps = 2;
+    
+    // for swimming animation
+    public float amplitude = 0.25f;
+    public float frequency = 0.5f;
+    public Vector3 posOrigin = new Vector3();
+    public Vector3 tempPos = new Vector3();
+    public Vector3 rotation = new Vector3(0, 30f, 0);
     
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponentInParent<Animator>();
     }
-    
+
+    private void Start()
+    {
+        posOrigin = transform.position;
+    }
+
     private void FixedUpdate()
     {
         ApplyGravity();
@@ -41,6 +55,11 @@ public class PlayerController : MonoBehaviour
         {
             AnimationManager.ChangeAnimation(_animator, PersistentDataManager.PLAYER_JUMP);
         } else 
+            // animate swimming
+        if (_characterController.transform.position.y < -2)
+        {
+            AnimationManager.ChangeAnimation(_animator,PersistentDataManager.PLAYER_SWIM);
+        }  else 
             // animate walking
         if (_direction.x != 0 || _direction.z != 0)
         {
@@ -50,6 +69,13 @@ public class PlayerController : MonoBehaviour
         {
             AnimationManager.ChangeAnimation(_animator,PersistentDataManager.PLAYER_IDLE);
         }
+    }
+
+    private void JumpFloat()
+    {
+        if (!IsGrounded() && _numberOfJumps >= maxNumberOfJumps) return;
+        if (_numberOfJumps == 0) StartCoroutine(WaitForLanding());
+        _playerVelocity = swimmjump;    
     }
 
     private void ApplyMovement()
