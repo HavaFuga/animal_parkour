@@ -17,18 +17,18 @@ public class CameraManager : MonoBehaviour
         if (_characters.Length == 0) return;
         _target = _characters[PersistentDataManager.SelectedCharacter].transform;
 
-        Vector3 swimmingAngle = Vector3.zero;
-        Vector3 swimmRotation = Vector3.zero;
+        _offset = new Vector3(0, 3, -10);
+        Vector3 temp = transform.rotation.eulerAngles;
+        temp.x = 10f;
         
         // is
-        if (_target.position.y < 2)
+        if (_target.position.y < -2)
         {
-            swimmingAngle.y = 6;
-            Debug.Log("is smaller than y < 2");
-            swimmRotation.x = 20;
+            _offset = new Vector3(0, 6.5f, -10);
+            temp.x = 20.0f;
         }
-        Vector3 targetPosition = _target.position + _offset + swimmingAngle;
-        transform.Rotate(swimmRotation);
+        Vector3 targetPosition = Vector3.SmoothDamp(_target.position, _target.position + _offset, ref _currentVelocity, smoothTime);
+        transform.rotation = Quaternion.Euler(temp);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _currentVelocity, smoothTime);
     }   
 }
