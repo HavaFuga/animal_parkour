@@ -40,9 +40,4 @@ public class CharacterAnimation : MonoBehaviour
         }
     }
     
-
-    private void animateWalking()
-    {
-        
-    }
 }
