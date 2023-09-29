@@ -58,6 +58,7 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 - [x] Add Trash (minus Points)
 - [x] Camera movement, when swimming
 - [ ] swimming animation
+- [ ] roll speed 2x to go under smth
 - [ ] Add Enemies
 - [ ] MAKE PRETTY CUS EW
 
