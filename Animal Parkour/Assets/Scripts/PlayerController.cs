@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private int _numberOfJumps;
     private Animator _animator;
 
-    [SerializeField] private float speed;
+    private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float swimmjump;
     [SerializeField] private float smoothTime = 0.05f;
@@ -38,10 +38,19 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         posOrigin = transform.position;
+        speed = 4;
+        PersistentDataManager.SpeedChangeEvent += OnChangeSpeed;
+    }
+
+    private void OnChangeSpeed(object sender, EventArgs e)
+    {
+        speed = PersistentDataManager.Speed;
+        Debug.Log(speed);
     }
 
     private void FixedUpdate()
     {
+        Debug.Log(speed);
         ApplyGravity();
         ApplyAnimation();
         ApplyMovement(); 

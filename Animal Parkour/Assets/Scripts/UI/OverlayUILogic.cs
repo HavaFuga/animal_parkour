@@ -16,6 +16,11 @@ namespace UI
             PointManager.EnergyChanged += AdjustEnergy;
         }
 
+        private void Start()
+        {
+            SetEnergy();
+        }
+
         protected virtual void OnPauseMenuButtonPressed()
         {
             PauseMenuButtonPressed?.Invoke(this, EventArgs.Empty);

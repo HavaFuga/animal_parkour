@@ -35,16 +35,34 @@ public class PointManager : MonoBehaviour
     {
         if (collider.gameObject.tag == _pointsTagName && _value < 10)
         {
-            Debug.Log("Point collected");
-            _value++;
+            AddEnergy();
         } else if (collider.gameObject.tag == _trashTagName && _value > 0)
         {
-            Debug.Log("Trash collected");
-            _value--;
+            RemoveEnergy();
         }
 
         collider.gameObject.SetActive(false);
         SetEnergy();
+    }
+
+    private void AddEnergy()
+    {
+        float speed = PersistentDataManager.Speed;
+        if (speed >= 10) return;
+
+        PersistentDataManager.Speed = speed + 0.2f; 
+        Debug.Log("Point collected");
+        _value++;
+    }
+
+    private void RemoveEnergy()
+    {
+        float speed = PersistentDataManager.Speed;
+        if (speed <= 0) return;
+
+        PersistentDataManager.Speed = speed - 0.2f; 
+        Debug.Log("Trash collected");
+        _value--;
     }
 
     public virtual void OnEnergyChanged()

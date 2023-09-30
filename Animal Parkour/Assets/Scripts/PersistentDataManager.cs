@@ -6,6 +6,7 @@ public class PersistentDataManager : MonoBehaviour
     // string variables called keys
     private const string SelectedCharacterKey = "SelectedCharacter";
     private const string EnergyKey = "Energy";
+    private const string SpeedKey = "Speed";
     public static readonly string EnergyBarName = "Energy";
     
     // Animation States
@@ -35,20 +36,42 @@ public class PersistentDataManager : MonoBehaviour
     public static int Energy
     {
         // PlayerPrefs has float, int, string. other values should be created manual methods
-        get => PlayerPrefs.GetInt(EnergyKey, 0);
+        get => PlayerPrefs.GetInt(EnergyKey, 5);
         set
         {
             PlayerPrefs.SetInt(EnergyKey, value);
-            OnDataChangeEvent();
+            OnEnergyChangeEvent();
         }
     }
-    
-    
 
+    public static float Speed
+    {
+        get => PlayerPrefs.GetFloat(SpeedKey, 4.0f);
+        set
+        {
+            PlayerPrefs.SetFloat(SpeedKey, value);
+            OnSpeedChangeEvent();
+        }
+        
+    }
+    
     public static event EventHandler DataChangeEvent;
     private static void OnDataChangeEvent()
     {
         // sender is null since theres no 'this' in static environment
         DataChangeEvent?.Invoke(null, EventArgs.Empty);
+    }
+
+    public static event EventHandler EnergyChangeEvent;
+    private static void OnEnergyChangeEvent()
+    {
+        // sender is null since theres no 'this' in static environment
+        EnergyChangeEvent?.Invoke(null, EventArgs.Empty);
+    }
+    public static event EventHandler SpeedChangeEvent;
+    private static void OnSpeedChangeEvent()
+    {
+        // sender is null since theres no 'this' in static environment
+        SpeedChangeEvent?.Invoke(null, EventArgs.Empty);
     }
 }
