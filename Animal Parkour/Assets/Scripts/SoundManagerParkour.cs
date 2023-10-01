@@ -8,6 +8,8 @@ public class SoundManagerParkour : MonoBehaviour
     public AudioSource src;
 
     public AudioClip sfx1, sfx2, sfx3;
+    public AudioClip pointSound;
+    public AudioClip trashSound;
     private float energy;
     
     private void Start()
@@ -19,7 +21,7 @@ public class SoundManagerParkour : MonoBehaviour
     {
         // if (PersistentDataManager.GameHasStarted == 0) return;
         AudioClip audioClip;
-        
+        src.PlayOneShot(pointSound);
         Debug.Log("energy " + energy);
         
         energy = PersistentDataManager.Energy;

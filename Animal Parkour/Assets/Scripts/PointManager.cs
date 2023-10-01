@@ -15,14 +15,23 @@ public class PointManager : MonoBehaviour
     private string _trashTagName = "Trash";
     private OverlayUILogic _overlayPanel;
     private UIDocument _overlayDocument;
+    public AudioSource src;
+    public AudioClip PointCollectedSound;
     
     public static event EventHandler EnergyChanged;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _value = 5;
         SetEnergy();
+        PersistentDataManager.EnergyChangeEvent += OnChangeEnergy;
+    }
+
+    private void OnChangeEnergy(object sender, EventArgs e)
+    {
+        
     }
 
     private void SetEnergy()
@@ -52,6 +61,7 @@ public class PointManager : MonoBehaviour
 
         PersistentDataManager.Speed = speed + 0.2f; 
         Debug.Log("Point collected");
+        // src.PlayOneShot(PointCollectedSound);
         _value++;
     }
 

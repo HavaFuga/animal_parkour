@@ -1222,6 +1222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1001 &199709095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1362,6 +1364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1 &199834259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1001 &367137978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4570,6 +4576,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1001 &1119733095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5615,6 +5623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1 &1475317859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,6 +5988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1001 &1533465860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6877,6 +6889,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1001 &1778932757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7957,6 +7971,8 @@ MonoBehaviour:
   sfx1: {fileID: 8300000, guid: 36083e7ceaa9b6848b759ff75028325d, type: 3}
   sfx2: {fileID: 8300000, guid: eaf48dfa3c38dc54d8d5b8a11763c546, type: 3}
   sfx3: {fileID: 8300000, guid: eba2c8507dd74e74b9a32b3322846e26, type: 3}
+  pointSound: {fileID: 8300000, guid: 91d63f03fa918a54e873d2770f62dacd, type: 3}
+  trashSound: {fileID: 0}
 --- !u!1001 &2024872731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8278,6 +8294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  src: {fileID: 0}
+  PointCollectedSound: {fileID: 0}
 --- !u!1001 &213676201021952576
 PrefabInstance:
   m_ObjectHideFlags: 0
