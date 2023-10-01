@@ -7,6 +7,7 @@ public class PersistentDataManager : MonoBehaviour
     private const string SelectedCharacterKey = "SelectedCharacter";
     private const string EnergyKey = "Energy";
     private const string SpeedKey = "Speed";
+    private const string GameHasStartedKey = "Speed";
     public static readonly string EnergyBarName = "Energy";
     
     // Animation States
@@ -52,6 +53,13 @@ public class PersistentDataManager : MonoBehaviour
             PlayerPrefs.SetFloat(SpeedKey, value);
             OnSpeedChangeEvent();
         }
+        
+    }
+    
+    public static int GameHasStarted
+    {
+        get => PlayerPrefs.GetInt(GameHasStartedKey, 0);
+        set => PlayerPrefs.SetInt(GameHasStartedKey, value);
         
     }
     

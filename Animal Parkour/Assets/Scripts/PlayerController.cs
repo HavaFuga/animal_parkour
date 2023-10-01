@@ -39,18 +39,17 @@ public class PlayerController : MonoBehaviour
     {
         posOrigin = transform.position;
         speed = 4;
+        PersistentDataManager.Speed = speed;
         PersistentDataManager.SpeedChangeEvent += OnChangeSpeed;
     }
 
     private void OnChangeSpeed(object sender, EventArgs e)
     {
         speed = PersistentDataManager.Speed;
-        Debug.Log(speed);
     }
 
     private void FixedUpdate()
     {
-        Debug.Log(speed);
         ApplyGravity();
         ApplyAnimation();
         ApplyMovement(); 

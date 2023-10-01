@@ -17,15 +17,15 @@ public class CameraManager : MonoBehaviour
         if (_characters.Length == 0) return;
         _target = _characters[PersistentDataManager.SelectedCharacter].transform;
 
-        _offset = new Vector3(0, 3, -10);
+        _offset = new Vector3(0, 4, -10);
         Vector3 temp = transform.rotation.eulerAngles;
-        temp.x = 10f;
+        temp.x = 15f;
         
         // is
         if (_target.position.y < -2)
         {
-            _offset = new Vector3(0, 6.5f, -10);
-            temp.x = 20.0f;
+            _offset = new Vector3(0, 8f, -12);
+            temp.x = 30.0f;
         }
         Vector3 targetPosition = Vector3.SmoothDamp(_target.position, _target.position + _offset, ref _currentVelocity, smoothTime);
         transform.rotation = Quaternion.Euler(temp);
