@@ -13,12 +13,14 @@ public class PointManager : MonoBehaviour
     private int _value;
     private string _pointsTagName = "Point";
     private string _trashTagName = "Trash";
+    private string _endPointName = "EndPoint";
     private OverlayUILogic _overlayPanel;
     private UIDocument _overlayDocument;
     public AudioSource src;
     public AudioClip PointCollectedSound;
     
     public static event EventHandler EnergyChanged;
+    public static event EventHandler EndPointReached;
 
 
     // Start is called before the first frame update
@@ -42,13 +44,19 @@ public class PointManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        if (collider.gameObject.tag == _endPointName && _value > 0)
+        {
+            OnEndPointReached();
+            return;
+        }
+        
         if (collider.gameObject.tag == _pointsTagName && _value < 10)
         {
             AddEnergy();
         } else if (collider.gameObject.tag == _trashTagName && _value > 0)
         {
             RemoveEnergy();
-        }
+        } 
 
         collider.gameObject.SetActive(false);
         SetEnergy();
@@ -78,5 +86,10 @@ public class PointManager : MonoBehaviour
     public virtual void OnEnergyChanged()
     {
         EnergyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    private static void OnEndPointReached()
+    {
+        EndPointReached?.Invoke(null, EventArgs.Empty);
     }
 }

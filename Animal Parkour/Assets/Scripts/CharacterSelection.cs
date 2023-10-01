@@ -21,7 +21,6 @@ public class CharacterSelection : MonoBehaviour
     {
         transform.Rotate (0f,0f,0f);
         _focusedCharacter = 0;
-        _audioSource.clip = _nextSound;
     }   
 
     private void Update()
@@ -40,7 +39,7 @@ public class CharacterSelection : MonoBehaviour
     {
         _characters[_focusedCharacter].SetActive(false);
         _focusedCharacter = (_focusedCharacter + 1) % _characters.Length;
-        _audioSource.Play();
+        _audioSource.PlayOneShot(_nextSound);
         ActivateCharacter();
     }
 
@@ -52,7 +51,7 @@ public class CharacterSelection : MonoBehaviour
         {
             _focusedCharacter += _characters.Length;
         }
-        _audioSource.Play();
+        _audioSource.PlayOneShot(_nextSound);
         ActivateCharacter();
     }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Point
   - Trash
+  - EndPoint
   layers:
   - Default
   - TransparentFX
