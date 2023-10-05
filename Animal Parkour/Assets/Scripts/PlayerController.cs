@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float swimmjump;
     [SerializeField] private float smoothTime = 0.05f;
     [SerializeField] private int maxNumberOfJumps = 2;
+    private float energy;
     
     // for swimming animation
     public float amplitude = 0.25f;
@@ -41,7 +42,34 @@ public class PlayerController : MonoBehaviour
         speed = 4;
         PersistentDataManager.Speed = speed;
         PersistentDataManager.SpeedChangeEvent += OnChangeSpeed;
+        PersistentDataManager.EnergyChangeEvent += OnChangeEnergy;
     }
+
+    private void OnChangeEnergy(object sender, EventArgs e)
+    {
+        AudioClip audioClip;
+        // if (PersistentDataManager.LastCollected == PersistentDataManager.POINT_FRUIT)
+        // {
+        //     src.PlayOneShot(pointSound);
+        // }
+        // else 
+        if (PersistentDataManager.LastCollected == PersistentDataManager.POINT_TRASH)
+        {
+            AnimationManager.OneShotAnimation(_animator, PersistentDataManager.PLAYER_FEAR);
+        }
+        Debug.Log("energy " + energy);
+        
+        energy = PersistentDataManager.Energy;
+        if (energy >= 10f)
+        {
+        } else if (energy <= 3)
+        {
+        }
+        else
+        {
+        }
+    }
+
 
     private void OnChangeSpeed(object sender, EventArgs e)
     {

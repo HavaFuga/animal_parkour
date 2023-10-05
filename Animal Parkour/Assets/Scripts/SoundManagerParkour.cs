@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SoundManagerParkour : MonoBehaviour
@@ -21,7 +22,14 @@ public class SoundManagerParkour : MonoBehaviour
     {
         // if (PersistentDataManager.GameHasStarted == 0) return;
         AudioClip audioClip;
-        src.PlayOneShot(pointSound);
+        if (PersistentDataManager.LastCollected == PersistentDataManager.POINT_FRUIT)
+        {
+            src.PlayOneShot(pointSound);
+        }
+        else if (PersistentDataManager.LastCollected == PersistentDataManager.POINT_TRASH)
+        {
+            src.PlayOneShot(trashSound);
+        }
         Debug.Log("energy " + energy);
         
         energy = PersistentDataManager.Energy;

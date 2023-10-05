@@ -17,6 +17,7 @@ public class PointManager : MonoBehaviour
     private UIDocument _overlayDocument;
     public AudioSource src;
     public AudioClip PointCollectedSound;
+    public AudioClip TrashCollectedSound;
     
     public static event EventHandler EnergyChanged;
 
@@ -60,8 +61,8 @@ public class PointManager : MonoBehaviour
         if (speed >= 10) return;
 
         PersistentDataManager.Speed = speed + 0.2f; 
+        PersistentDataManager.LastCollected = PersistentDataManager.POINT_FRUIT;
         Debug.Log("Point collected");
-        // src.PlayOneShot(PointCollectedSound);
         _value++;
     }
 
@@ -70,7 +71,8 @@ public class PointManager : MonoBehaviour
         float speed = PersistentDataManager.Speed;
         if (speed <= 0) return;
 
-        PersistentDataManager.Speed = speed - 0.2f; 
+        PersistentDataManager.Speed = speed - 0.2f;
+        PersistentDataManager.LastCollected = PersistentDataManager.POINT_TRASH;
         Debug.Log("Trash collected");
         _value--;
     }

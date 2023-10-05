@@ -1428,7 +1428,7 @@ MonoBehaviour:
   _name: {fileID: 230173831}
   _rotationSpeed: 50
   _audioSource: {fileID: 2041560905}
-  _nextSound: {fileID: 8300000, guid: aea2291c06d823a4ca635250237a20ff, type: 3}
+  _nextSound: {fileID: 8300000, guid: a722ba02fea4d4047b6dfeb02e58008b, type: 3}
 --- !u!1 &1086427835
 GameObject:
   m_ObjectHideFlags: 0
