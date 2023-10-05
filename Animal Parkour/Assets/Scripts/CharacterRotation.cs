@@ -9,7 +9,6 @@ public class CharacterRotation : MonoBehaviour
 {
     [SerializeField] private GameObject[] _characters;
     [SerializeField] private float _rotationSpeed = 20f;
-    [SerializeField] private float asdf = 20f;
 
     private Vector3 spawn;
     private Transform spawnPoint;
@@ -20,6 +19,7 @@ public class CharacterRotation : MonoBehaviour
     private void Start()
     {
         transform.Rotate (0f,0f,0f);
+        InvokeRepeating(nameof(NextCharacter), 5f, 5f);
     }   
 
     private void Update()
@@ -27,16 +27,7 @@ public class CharacterRotation : MonoBehaviour
         transform.Rotate (0f,_rotationSpeed*Time.deltaTime,0f);
         _animator = GetComponentInChildren<Animator>();
         AnimationManager.ChangeAnimation(_animator, PersistentDataManager.PLAYER_IDLE);
-
-        StartCoroutine(MyCoroutine());
     }
-    
-    IEnumerator MyCoroutine()
-    {
-        yield return new WaitForSeconds(asdf);
-        NextCharacter();
-    }
-
 
     private void ActivateCharacter()
     {
@@ -49,11 +40,5 @@ public class CharacterRotation : MonoBehaviour
         _characters[_focusedCharacter].SetActive(false);
         _focusedCharacter = (_focusedCharacter + 1) % _characters.Length;
         ActivateCharacter();
-    }
-    
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
     }
 }

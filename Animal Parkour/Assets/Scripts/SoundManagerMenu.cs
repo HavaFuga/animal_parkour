@@ -7,12 +7,13 @@ public class SoundManagerMenu : MonoBehaviour
 {
     public AudioSource src;
 
-    public AudioClip sfx1;
+    public AudioClip homeMusic;
     private float energy;
     
     private void Start()
     {
-        src.PlayOneShot(sfx1);
+        src.clip = homeMusic;
+        src.Play();
     }
     
 }
