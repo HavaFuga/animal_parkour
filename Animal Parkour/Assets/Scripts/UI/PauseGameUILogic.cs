@@ -44,7 +44,8 @@ public class PauseGameUILogic : MonoBehaviour
         _pauseMenuDocument.rootVisualElement.Q<Button>(ResetButtonName).clicked += () =>
         {
             Debug.Log("Reset Game");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene( SceneManager.GetActiveScene().name );
             Time.timeScale = 1f;
         };
         

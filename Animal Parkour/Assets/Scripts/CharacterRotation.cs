@@ -19,7 +19,7 @@ public class CharacterRotation : MonoBehaviour
     private void Start()
     {
         transform.Rotate (0f,0f,0f);
-        InvokeRepeating(nameof(NextCharacter), 5f, 5f);
+        InvokeRepeating(nameof(NextCharacter), 3f, 3f);
     }   
 
     private void Update()

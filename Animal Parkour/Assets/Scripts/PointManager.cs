@@ -70,6 +70,7 @@ public class PointManager : MonoBehaviour
 
         PersistentDataManager.Speed = speed + 0.2f; 
         PersistentDataManager.LastCollected = PersistentDataManager.POINT_FRUIT;
+        src.PlayOneShot(PointCollectedSound);
         Debug.Log("Point collected");
         _value++;
     }
@@ -81,6 +82,7 @@ public class PointManager : MonoBehaviour
 
         PersistentDataManager.Speed = speed - 0.2f;
         PersistentDataManager.LastCollected = PersistentDataManager.POINT_TRASH;
+        src.PlayOneShot(TrashCollectedSound);
         Debug.Log("Trash collected");
         _value--;
     }
