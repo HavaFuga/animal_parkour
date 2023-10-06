@@ -56,11 +56,24 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 - [x] Animate Points
 - [x] Create Overlay during game with time and hearts
 - [x] Add Trash (minus Points)
-- [x] Camera movement, when swimming
-- [ ] swimming animation
-- [ ] roll speed 2x to go under smth
-- [ ] Add Enemies
-- [ ] MAKE PRETTY CUS EW
+- [x] Camera movement changes, when swimming
+- [x] swimming animation (somewhat)
+- [x] MAKE PRETTY CUS EW
+- [ ] Add moving enemies
+
+
+## Bugs that still need to be fixed
+#### not enough time
+- When the player Restarts the game, or when they go to the menu to select a new character and start the game again, the character got "destroyed" (as far as i understood it).<br> 
+=> This can be solved instantiating the characters, like we do with the pause menu for example.
+
+#### couldn't do
+- Since it's hard to differentiate the fruits with the sweets, i tried to give them a slight glow. For the fruits a green glow and for the sweet a red glow.<br>
+I tried to do it with [Post Processing](https://docs.unity3d.com/Manual/PostProcessingOverview.html) with the Layer and Volume. ![layer.png](img%2Flayer.png) <br>
+But when i tried to add a material to the fruits (that had no colour, only Emission with intensity 2), it coloured the whole object with that colour. Like this:<br> ![layer.png](img%2Fapple-glow.png) <br>
+Even when i tried to layer the materials, the green overwrote the apples material :![layer.png](img%2Fapple-material.png)
+
+
 
 ## Assets
 Please make sure to support these asset creators by downloading their assets if you intend to modify or expand upon the game.

@@ -2,7 +2,7 @@
     <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Images/bg.png?fileID=2800000&amp;guid=631273785d7864f419c220618b7739fa&amp;type=3#bg&apos;); position: absolute; width: 100%; height: 100%;" />
     <ui:GroupBox name="GroupBox" style="justify-content: center; align-items: center; height: 100%;">
         <ui:Label tabindex="-1" text="Rules" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-        <ui:Label tabindex="-1" text="1. eat helthi&#10;2. dont die&#10;3. if you see a bug, you dont" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+        <ui:Label tabindex="-1" text="1. eat healthy&#10;2. dont die&#10;3. if you see a bug, you dont" parse-escape-sequences="true" display-tooltip-when-elided="true" />
         <ui:Button text="ok, got it" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OK" style="margin-top: 20px;" />
     </ui:GroupBox>
 </ui:UXML>

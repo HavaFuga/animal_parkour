@@ -7,8 +7,6 @@ using UnityEngine;
 public class SoundManagerParkour : MonoBehaviour
 {
     public AudioSource src;
-    public AudioSource initiated;
-
     public AudioClip sfx1, sfx2, sfx3;
     public AudioClip pointSound;
     public AudioClip trashSound;
@@ -17,7 +15,6 @@ public class SoundManagerParkour : MonoBehaviour
     private void Start()
     {
         PersistentDataManager.EnergyChangeEvent += OnChangeEnergy;
-        // initiated = Instantiate(src);
     }
 
     private void OnChangeEnergy(object sender, EventArgs e)
