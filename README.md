@@ -3,7 +3,7 @@
 Welcome to the Animal Parkour game! This README file will provide you with all the essential information you need to understand, set up, and enjoy my Unity game.
 
 ### Introduction
-Animal Parkour is an exciting Unity game where you control various animals as they navigate challenging parkour courses. Collect food items along the way, avoid enemies, and race against time to achieve the highest score possible.
+Animal Parkour is an exciting Unity game where you control various animals as they navigate challenging parkour courses. Collect food items along the way, avoid eating unhealthy and avoid enemies. All that while racing against time to achieve the highest score possible.
 
 ### Built With
 [![My Skills](https://skillicons.dev/icons?i=unity)](https://skillicons.dev)
@@ -12,7 +12,7 @@ Animal Parkour is an exciting Unity game where you control various animals as th
 In Animal Parkour, the main objective is to guide your chosen animal from point A to point B through intricate parkour courses while collecting food items along the way. Your score is determined by the number of collected food items and the time spent
 
 ### Additional Challenge:
-- **Negative Points:** Some items may be considered trash; colliding with them will deduct points from your score.
+- **Energy Level:** Some items may be considered trash/unhealthy; colliding with them will lower your energy, which makes you slower.
 - **Enemies:** Beware of moving enemies! touching them results in a game over.
 
 ## Requirements
@@ -58,16 +58,18 @@ The game includes a timer that can be paused, allowing you to strategize and tak
 - [x] Add Trash (minus Points)
 - [x] Camera movement changes, when swimming
 - [x] swimming animation (somewhat)
-- [x] MAKE PRETTY CUS EW
-- [ ] Add moving enemies
+- [ ] Add rolling under obstacles
+- [ ] Add moving enemies to empty field
+- [ ] Make Energy move obviouse (add animation when eating trash, add red/green glow to food)
+- [ ] After Game finished, enter name (for highscore)
+- [ ] Add Highscore with only time
+- [ ] MAKE PRETTY CUS EW
 
 
 ## Bugs that still need to be fixed
-#### not enough time
 - When the player Restarts the game, or when they go to the menu to select a new character and start the game again, the character got "destroyed" (as far as i understood it).<br> 
 => This can be solved instantiating the characters, like we do with the pause menu for example.
 
-#### couldn't do
 - Since it's hard to differentiate the fruits with the sweets, i tried to give them a slight glow. For the fruits a green glow and for the sweet a red glow.<br>
 I tried to do it with [Post Processing](https://docs.unity3d.com/Manual/PostProcessingOverview.html) with the Layer and Volume. ![layer.png](img%2Flayer.png) <br>
 But when i tried to add a material to the fruits (that had no colour, only Emission with intensity 2), it coloured the whole object with that colour. Like this:<br> ![layer.png](img%2Fapple-glow.png) <br>
@@ -85,6 +87,10 @@ Used for the characters
 Used for the points
 ![food_asset.jpg](img%2Ffood_asset.jpg)
 
-### [LowPoly Trees and Rocks](https://assetstore.unity.com/packages/3d/vegetation/lowpoly-trees-and-rocks-88376)
+### [Low Poly Fence Pack](https://assetstore.unity.com/packages/3d/props/exterior/low-poly-fence-pack-61661)
 Used for the Vegetation
+![fence_asset.png](img%2Ffence_asset.png)
+
+### [LowPoly Trees and Rocks](https://assetstore.unity.com/packages/3d/vegetation/lowpoly-trees-and-rocks-88376)
+_Will be used_ for the Vegetation
 ![vegetation_asset.png](img%2Fvegetation_asset.png)
