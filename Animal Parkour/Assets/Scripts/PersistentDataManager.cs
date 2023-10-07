@@ -26,6 +26,7 @@ public class PersistentDataManager : MonoBehaviour
     public const string PLAYER_SPIN = "Spin";
     public const string PLAYER_ROLL = "Roll";
     public const string PLAYER_FEAR = "Fear";
+    public const string PLAYER_BOUNCE = "Bounce";
     
     // property in C# same as set get methods for a variable
     public static int SelectedCharacter

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
 public class AnimationManager : MonoBehaviour
@@ -25,14 +26,12 @@ public class AnimationManager : MonoBehaviour
     
     public static void OneShotAnimation(Animator animator, string newState)
     {
-        string oldState;
-        // stop animation from interrupting itself
-        if (currentState == newState) return;
+        string oldState = currentState;
         
         // play animation 
-        animator.PlayInFixedTime(newState);
+        animator.Play(newState,  -1, 0f);
         
-        // reassign current State
-        currentState = newState;
+        // continue other animation State
+        // animator.Play(oldState);
     }
 }

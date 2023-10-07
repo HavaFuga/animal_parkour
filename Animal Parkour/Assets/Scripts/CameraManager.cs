@@ -7,7 +7,7 @@ public class CameraManager : MonoBehaviour
     private InputAction _input;
     
     [SerializeField] private GameObject[] _characters;
-    [SerializeField] private Vector3 _offset;
+    private Vector3 _offset;
     [SerializeField] private float smoothTime;
     private Transform _target;
     public Vector2 turn;
@@ -17,7 +17,7 @@ public class CameraManager : MonoBehaviour
         if (_characters.Length == 0) return;
         _target = _characters[PersistentDataManager.SelectedCharacter].transform;
 
-        _offset = new Vector3(0, 4, -10);
+        _offset = new Vector3(0, 3, -9);
         Vector3 temp = transform.rotation.eulerAngles;
         temp.x = 15f;
         

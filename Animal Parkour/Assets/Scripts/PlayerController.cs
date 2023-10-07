@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         // else 
         if (PersistentDataManager.LastCollected == PersistentDataManager.POINT_TRASH)
         {
-            AnimationManager.OneShotAnimation(_animator, PersistentDataManager.PLAYER_FEAR);
+            AnimationManager.OneShotAnimation(_animator, PersistentDataManager.PLAYER_BOUNCE);
         }
         Debug.Log("energy " + energy);
         

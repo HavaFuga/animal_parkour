@@ -4,6 +4,9 @@
             <ui:Button text="P" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Pause" style="width: 42px; align-items: flex-start; align-self: flex-start; flex-direction: row;" />
             <ui:ProgressBar value="50" title="Energy" name="Energy" style="width: 118px; -unity-background-image-tint-color: rgb(255, 35, 35); background-image: none; -unity-background-scale-mode: stretch-to-fill; align-items: center; flex-direction: row; justify-content: flex-start; position: relative; top: auto; left: auto;" />
         </ui:GroupBox>
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Timer" style="align-self: center; align-items: flex-end; white-space: nowrap; -unity-text-align: middle-right; position: relative; top: auto; left: auto; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 5px; justify-content: flex-start;" />
+        <ui:GroupBox style="flex-direction: row;">
+            <ui:Label tabindex="-1" text="Time:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: center; align-items: flex-end; white-space: nowrap; -unity-text-align: middle-right; position: relative; top: auto; left: auto; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 5px; justify-content: flex-start;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Timer" style="align-self: center; align-items: flex-end; white-space: nowrap; -unity-text-align: middle-right; position: relative; top: auto; left: auto; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 15px; padding-bottom: 5px; padding-left: 5px; justify-content: flex-start;" />
+        </ui:GroupBox>
     </ui:GroupBox>
 </ui:UXML>
